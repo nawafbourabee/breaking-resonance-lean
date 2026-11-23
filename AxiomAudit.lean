@@ -1,0 +1,1041 @@
+import BreakingResonance
+
+#print axioms BreakingResonance.trajectoryLaw
+#print axioms BreakingResonance.flightLaw
+#print axioms BreakingResonance.cellState_zero
+#print axioms BreakingResonance.cellState_endpoint
+#print axioms BreakingResonance.cellState_successor
+#print axioms BreakingResonance.flightLaw_freeTransport
+#print axioms BreakingResonance.flightLaw_successor
+#print axioms BreakingResonance.trajectoryLaw_memLp
+#print axioms BreakingResonance.flightLaw_memLp
+#print axioms BreakingResonance.flightLaw_entropy_finite
+#print axioms BreakingResonance.energy_comparison
+#print axioms BreakingResonance.flightVelocity_sq_le_modifiedEnergy
+#print axioms BreakingResonance.norm_cube_bound
+#print axioms BreakingResonance.verlet_energy_control
+#print axioms BreakingResonance.forceCorrector
+#print axioms BreakingResonance.corrector_zero_of_centered_velocity
+#print axioms BreakingResonance.force_update_corrector
+#print axioms BreakingResonance.forceCorrector_decomposition
+#print axioms BreakingResonance.forceCorrector_lower_bound
+#print axioms BreakingResonance.positionCost_kick
+#print axioms BreakingResonance.freeDriftRate
+#print axioms BreakingResonance.freeDriftRate_shift
+#print axioms BreakingResonance.freeDriftRate_continuous
+#print axioms BreakingResonance.freeDrift_corrector_increment
+#print axioms BreakingResonance.freeDrift_weighted_cost_bound
+#print axioms BreakingResonance.freeTransport_unitInterval
+#print axioms BreakingResonance.scalarEquiv
+#print axioms BreakingResonance.scalarEquiv_apply
+#print axioms BreakingResonance.velocityScale
+#print axioms BreakingResonance.transportJoint_scale
+#print axioms BreakingResonance.transportPosition_scale
+#print axioms BreakingResonance.product_reference_scale
+#print axioms BreakingResonance.conditionalGaussianEntropy_scale
+#print axioms BreakingResonance.freeTransport_interval
+#print axioms BreakingResonance.freeTransport_interval_kl
+#print axioms BreakingResonance.freeTransport_interval_finite
+#print axioms BreakingResonance.initial_bad_mass_margin
+#print axioms BreakingResonance.roundedDuration_mean_lower
+#print axioms BreakingResonance.weighted_cost_lower
+#print axioms BreakingResonance.acceptedWeight
+#print axioms BreakingResonance.acceptedWeight_invariant
+#print axioms BreakingResonance.acceptedMeasure_invariant
+#print axioms BreakingResonance.metropolisPositionFlow
+#print axioms BreakingResonance.metropolisPositionFlow_symmetric
+#print axioms BreakingResonance.flippedTrajectoryEquiv
+#print axioms BreakingResonance.verlet_positionFlow_symmetric
+#print axioms BreakingResonance.variance_recurrence
+#print axioms BreakingResonance.affine_decay
+#print axioms BreakingResonance.affine_decay_exp
+#print axioms BreakingResonance.theoremOne_mass_substitution
+#print axioms BreakingResonance.theoremOne_error_bound
+#print axioms BreakingResonance.acceptProbability
+#print axioms BreakingResonance.acceptProbability_le_one
+#print axioms BreakingResonance.metropolisDecisionKernel
+#print axioms BreakingResonance.metropolisDecisionKernel_markov
+#print axioms BreakingResonance.proposalKernel
+#print axioms BreakingResonance.proposalKernel_markov
+#print axioms BreakingResonance.proposalKernel_apply
+#print axioms BreakingResonance.proposalKernel_stays
+#print axioms BreakingResonance.proposalKernel_retains
+#print axioms BreakingResonance.proposalKernel_totalVariation_lower
+#print axioms BreakingResonance.verletProposal
+#print axioms BreakingResonance.verletLogAcceptance
+#print axioms BreakingResonance.measurable_trajectory_count
+#print axioms BreakingResonance.measurable_verletProposal
+#print axioms BreakingResonance.measurable_verletLogAcceptance
+#print axioms BreakingResonance.randomizedVerletKernel
+#print axioms BreakingResonance.randomizedVerletKernel_markov
+#print axioms BreakingResonance.totalVariation
+#print axioms BreakingResonance.event_le_totalVariation
+#print axioms BreakingResonance.retained_mass
+#print axioms BreakingResonance.retained_mass_real
+#print axioms BreakingResonance.retained_mass_iterates
+#print axioms BreakingResonance.rejection_totalVariation_lower
+#print axioms BreakingResonance.attempts_lower_from_rejection
+#print axioms BreakingResonance.proposalKernel_flow_integral
+#print axioms BreakingResonance.proposalKernel_flow_split
+#print axioms BreakingResonance.proposalKernel_reversible_of_acceptedMeasure
+#print axioms BreakingResonance.reversible_countable_mixture
+#print axioms BreakingResonance.gibbs_acceptance_identity
+#print axioms BreakingResonance.gibbs_acceptedMeasure_invariant
+#print axioms BreakingResonance.measurable_phaseEnergy
+#print axioms BreakingResonance.fixedVerletKernel
+#print axioms BreakingResonance.fixedVerletKernel_markov
+#print axioms BreakingResonance.fixedVerletKernel_reversible
+#print axioms BreakingResonance.randomizedVerletKernel_mixture
+#print axioms BreakingResonance.randomizedVerletKernel_reversible
+#print axioms BreakingResonance.roundedVerletKernel_reversible
+#print axioms BreakingResonance.roundedVerletKernel_invariant
+#print axioms BreakingResonance.roundedDurationLaw
+#print axioms BreakingResonance.measurable_floorDuration
+#print axioms BreakingResonance.measurable_succFloorDuration
+#print axioms BreakingResonance.roundedDurationLaw_probability
+#print axioms BreakingResonance.integrable_floorDuration
+#print axioms BreakingResonance.roundedDuration_integrable_mean
+#print axioms BreakingResonance.roundedDuration_mean_bounds
+#print axioms BreakingResonance.roundedVerletKernel
+#print axioms BreakingResonance.roundedVerletKernel_markov
+#print axioms BreakingResonance.expected_stage_count
+#print axioms BreakingResonance.hasDerivAt_of_quadratic_upper_bounds
+#print axioms BreakingResonance.sharp_free_transport_of_smooth_characteristics
+#print axioms BreakingResonance.sharp_compactGaussian_freeTransport
+#print axioms BreakingResonance.conditional_covariance_entropy_sharp_ae
+#print axioms BreakingResonance.conditional_covariance_entropy_sharp_integral
+#print axioms BreakingResonance.scalar_covariance_test_integrable
+#print axioms BreakingResonance.scalar_covariance_test_normalized
+#print axioms BreakingResonance.basis_covariance_test_integrable
+#print axioms BreakingResonance.basis_covariance_test_normalized
+#print axioms BreakingResonance.basis_covariance_entropy
+#print axioms BreakingResonance.basis_covariance_entropy_sharp
+#print axioms BreakingResonance.gaussian_covariance_entropy_sharp
+#print axioms BreakingResonance.sharp_gaussianSmoothedFreeTransportBound
+#print axioms BreakingResonance.sharp_free_transport_corrector
+#print axioms BreakingResonance.gaussianFlight_mean_upper_rate_sharp
+#print axioms BreakingResonance.gaussianSmoothed_mean_upper_rate_sharp
+#print axioms BreakingResonance.sharp_gaussianSmoothedBound_of_compactBalls
+#print axioms BreakingResonance.mean_acceleration_upper_rate_sharp
+#print axioms BreakingResonance.freePositionProbability
+#print axioms BreakingResonance.sharp_continuous_freeTransport_upper_rate
+#print axioms BreakingResonance.sharp_free_transport_of_local_mean_maps
+#print axioms BreakingResonance.static_covariance_defect_sharp
+#print axioms BreakingResonance.covariance_defect_sharp
+#print axioms BreakingResonance.sharpFreeTransportRHS
+#print axioms BreakingResonance.regularizedGaussian_sharpFreeTransportRHS_tendsto
+#print axioms BreakingResonance.sharpFreeTransportRHS_integral_identity
+#print axioms BreakingResonance.sharp_free_transport_of_regularized_bound
+#print axioms BreakingResonance.SharpGaussianSmoothedFreeTransportBound
+#print axioms BreakingResonance.sharp_free_transport_of_smoothed_bound
+#print axioms BreakingResonance.trajectoryEquiv
+#print axioms BreakingResonance.trajectory_memLp
+#print axioms BreakingResonance.gibbs_volume_entropy_change
+#print axioms BreakingResonance.trajectory_entropy_change
+#print axioms BreakingResonance.cellState
+#print axioms BreakingResonance.cellEquiv
+#print axioms BreakingResonance.cellState_energy_identity
+#print axioms BreakingResonance.cell_entropy_change
+#print axioms BreakingResonance.positionCost
+#print axioms BreakingResonance.freeTransport_cost_expansion
+#print axioms BreakingResonance.transportJoint_transportJoint
+#print axioms BreakingResonance.transportJoint_velocity_second_moment
+#print axioms BreakingResonance.freeTransport_positionCost_hasDerivAt
+#print axioms BreakingResonance.trajectory
+#print axioms BreakingResonance.trajectory_zero
+#print axioms BreakingResonance.trajectory_succ
+#print axioms BreakingResonance.modifiedEnergy
+#print axioms BreakingResonance.modifiedEnergy_increment
+#print axioms BreakingResonance.modifiedEnergy_telescope
+#print axioms BreakingResonance.trajectory_flip
+#print axioms BreakingResonance.trajectory_inverse
+#print axioms BreakingResonance.flipped_trajectory_involutive
+#print axioms BreakingResonance.quadratic_modifiedEnergy_conserved
+#print axioms BreakingResonance.modifiedEnergy_increment_bound
+#print axioms BreakingResonance.metropolisAcceptance
+#print axioms BreakingResonance.metropolisAcceptance_lower
+#print axioms BreakingResonance.trajectory_measurePreserving
+#print axioms BreakingResonance.flipped_trajectory_measurePreserving
+#print axioms BreakingResonance.integral_primitive_eq_weighted
+#print axioms BreakingResonance.weighted_increment_bound
+#print axioms BreakingResonance.weighted_discrete_accumulation
+
+-- EnergyControl
+#print axioms BreakingResonance.verlet_energy_control_with_modified_error
+
+-- Reversibility
+#print axioms BreakingResonance.verlet_gradient_reversibility
+
+-- FreeDrift
+#print axioms BreakingResonance.freeDriftRate_entropy_identity
+
+-- WeightedDiscrete
+#print axioms BreakingResonance.sum_consecutive_differences
+
+-- ForceCorrector
+#print axioms BreakingResonance.forceCorrector_potential_identity
+#print axioms BreakingResonance.forceCorrector_potential_lower
+
+-- CellLaws
+#print axioms BreakingResonance.trajectoryLaw_zero
+#print axioms BreakingResonance.flightLaw_initial
+#print axioms BreakingResonance.flightLaw_initial_position
+#print axioms BreakingResonance.flightLaw_endpoint_position
+#print axioms BreakingResonance.trajectoryLaw_entropy_finite
+
+-- VerletWeightedCost
+#print axioms BreakingResonance.verlet_weighted_transport_bound
+
+-- FlightEntropyContinuity
+#print axioms BreakingResonance.freeFlight_potential_integral
+#print axioms BreakingResonance.potential_abs_bound
+#print axioms BreakingResonance.continuous_freeFlight_potential
+#print axioms BreakingResonance.continuous_freeFlight_position_entropy
+#print axioms BreakingResonance.continuous_freeFlight_joint_entropy
+
+-- WeightedEntropyRate
+#print axioms BreakingResonance.weighted_entropy_rate
+
+-- VerletQuadrature
+#print axioms BreakingResonance.linear_weight_integral
+#print axioms BreakingResonance.weighted_centered_linear_integral
+#print axioms BreakingResonance.weighted_affine_integral
+#print axioms BreakingResonance.combine_weighted_integrals
+#print axioms BreakingResonance.triangularWeight
+#print axioms BreakingResonance.triangularWeight_nonneg
+#print axioms BreakingResonance.triangularWeight_sum
+#print axioms BreakingResonance.weighted_endpoint_quadrature
+
+-- VerletIntegratedFlight
+#print axioms BreakingResonance.verlet_integrated_flight
+
+-- CellEntropy
+#print axioms BreakingResonance.cellRemainder
+#print axioms BreakingResonance.flightVelocity_memLp
+#print axioms BreakingResonance.forceVelocity_integrable
+#print axioms BreakingResonance.modifiedEnergy_difference_integrable
+#print axioms BreakingResonance.cellRemainder_integrable
+#print axioms BreakingResonance.cell_entropy_split
+#print axioms BreakingResonance.cell_endpoint_entropy_sum
+#print axioms BreakingResonance.cellRemainder_mean_continuous
+#print axioms BreakingResonance.cell_weighted_entropy_identity
+#print axioms BreakingResonance.cell_potential_increment
+
+-- NodeEntropyTransfer
+#print axioms BreakingResonance.freeFlight_velocity_entropy_identity
+#print axioms BreakingResonance.PPInterpolation
+#print axioms BreakingResonance.freeFlight_endpoint_entropy_bound_of_interpolation
+#print axioms BreakingResonance.freeFlight_node_transfer_of_interpolation
+#print axioms BreakingResonance.freeFlight_endpoint_entropy_bound
+#print axioms BreakingResonance.freeFlight_node_transfer
+
+-- ConditionedGibbs
+#print axioms BreakingResonance.cond_map_invariant
+#print axioms BreakingResonance.energyEvent
+#print axioms BreakingResonance.energyEvent_measurable
+#print axioms BreakingResonance.phaseGibbs_flip_invariant
+#print axioms BreakingResonance.conditionedGibbs_flip_invariant
+#print axioms BreakingResonance.corrector_zero_of_flip_invariant
+#print axioms BreakingResonance.conditionedGibbs_entropy
+#print axioms BreakingResonance.conditionedGibbs_corrector_zero
+
+-- ConductanceNumerics
+#print axioms BreakingResonance.log_two_bounds
+#print axioms BreakingResonance.log_fifty_upper
+#print axioms BreakingResonance.log_small_ratio_upper
+#print axioms BreakingResonance.binary_entropy_at_cutoff
+#print axioms BreakingResonance.conductance_entropy_margin
+
+-- BinaryKL
+#print axioms BreakingResonance.restricted_klFun_jensen
+#print axioms BreakingResonance.binary_partition_klFun
+#print axioms BreakingResonance.weighted_klFun_identity
+#print axioms BreakingResonance.binary_partition_entropy
+
+-- EntropyExit
+#print axioms BreakingResonance.binary_log_lower
+#print axioms BreakingResonance.entropy_forces_exit
+
+-- AcceptedExit
+#print axioms BreakingResonance.accepted_exit_from_conditioning
+#print axioms BreakingResonance.conditional_entropy_upper
+#print axioms BreakingResonance.conditioned_entropy_forces_exit
+
+-- EntropyConductance
+#print axioms BreakingResonance.entropy_conductance
+
+-- ConvexFlight
+#print axioms BreakingResonance.potential_convex_combination
+#print axioms BreakingResonance.potential_flight_chord
+#print axioms BreakingResonance.flight_mean_chord
+#print axioms BreakingResonance.weighted_chord_integral
+#print axioms BreakingResonance.flight_weighted_potential_chord
+
+-- VerletNodeEntropy
+#print axioms BreakingResonance.verlet_node_transfer_of_interpolation
+#print axioms BreakingResonance.verlet_node_transfer
+#print axioms BreakingResonance.verlet_endpoint_entropy_sum
+
+-- VerletPotentialQuadrature
+#print axioms BreakingResonance.potential_integral_fst
+#print axioms BreakingResonance.verlet_potential_quadrature
+#print axioms BreakingResonance.verlet_integrated_entropy_centered
+
+-- VerletWeightedEnergy
+#print axioms BreakingResonance.flight_endpoint_potential
+#print axioms BreakingResonance.verlet_weighted_joint_entropy
+
+-- VerletWeightedEntropy
+#print axioms BreakingResonance.verlet_weighted_entropy_of_interpolation
+#print axioms BreakingResonance.verlet_weighted_entropy
+#print axioms BreakingResonance.verlet_weighted_entropy_with_initial_entropy
+
+-- ProposalMixture
+#print axioms BreakingResonance.klDiv_finite_mixture_le
+
+-- ProposalEntropy
+#print axioms BreakingResonance.triangularEndpointLaw
+#print axioms BreakingResonance.triangularEndpointLaw_kl_le
+#print axioms BreakingResonance.triangularEndpointLaw_eq_triangularWeights
+#print axioms BreakingResonance.proposal_entropy_bound_from_weighted_sums
+#print axioms BreakingResonance.TalagrandBound
+#print axioms BreakingResonance.energy_shell_memLp
+#print axioms BreakingResonance.cellRemainder_nonneg
+#print axioms BreakingResonance.cellRemainder_le
+#print axioms BreakingResonance.verlet_triangular_proposal_entropy
+
+-- EnergyControl
+#print axioms BreakingResonance.verlet_energy_control_with_modified_error_of_remainder
+
+-- ProposalEntropy
+#print axioms BreakingResonance.PPModifiedEnergy
+#print axioms BreakingResonance.ppModifiedEnergy_of_hessian
+
+-- DensityLevels
+#print axioms BreakingResonance.acceptedWeight_lintegral_levels
+#print axioms BreakingResonance.lintegral_acceptedWeight_levels
+#print axioms BreakingResonance.integral_acceptedWeight_levels
+#print axioms BreakingResonance.densityLevel_memLp
+
+-- FourierOperators
+#print axioms BreakingResonance.cosineSeries
+#print axioms BreakingResonance.continuous_cosineSeries
+#print axioms BreakingResonance.cos_mul_arccos_eq_re_pow
+#print axioms BreakingResonance.cfc_cosineSeries_lower
+#print axioms BreakingResonance.cfc_cosineSeries_comparison
+#print axioms BreakingResonance.cfc_cosineSeries_unitary
+#print axioms BreakingResonance.unitary_cosineSeries_lower
+#print axioms BreakingResonance.unitary_cosineSeries_comparison
+
+-- VerletComposition
+#print axioms BreakingResonance.lpCompositionEquiv
+#print axioms BreakingResonance.lpCompositionUnitary
+#print axioms BreakingResonance.lpCompositionUnitary_pow_apply_ae
+#print axioms BreakingResonance.verletCompositionUnitary
+
+-- AdjustedFlow
+#print axioms BreakingResonance.proposalKernel_compProd_eq
+#print axioms BreakingResonance.acceptedWeight_integrable_product
+#print axioms BreakingResonance.integral_densityLevel_sq
+#print axioms BreakingResonance.phaseGibbsDensity
+#print axioms BreakingResonance.phaseGibbs_eq_withDensity
+#print axioms BreakingResonance.phaseGibbsDensity_measurable
+#print axioms BreakingResonance.phaseGibbsDensity_ne_top
+#print axioms BreakingResonance.fixedVerletKernel_compProd_density
+#print axioms BreakingResonance.fixedVerletKernel_quadratic_levels
+
+-- DensityLevels
+#print axioms BreakingResonance.integrable_integral_acceptedWeight_levels
+#print axioms BreakingResonance.integrable_integral_densityLevel_sq
+
+-- KernelQuadratic
+#print axioms BreakingResonance.countLawWeight
+#print axioms BreakingResonance.countLawWeight_nonneg
+#print axioms BreakingResonance.countLaw_tsum
+#print axioms BreakingResonance.countLawWeight_summable
+#print axioms BreakingResonance.countLawWeight_tsum
+#print axioms BreakingResonance.kernelQuadratic
+#print axioms BreakingResonance.compProd_integrable_quadratic
+#print axioms BreakingResonance.kernelQuadratic_congr
+#print axioms BreakingResonance.kernelQuadratic_eq_iterated_integral
+#print axioms BreakingResonance.compProd_eq_countable_mixture
+#print axioms BreakingResonance.kernelQuadratic_countable_mixture
+#print axioms BreakingResonance.countLaw_cosineSeries_eq_re_characteristic
+
+-- LevelQuadratic
+#print axioms BreakingResonance.densityTest
+#print axioms BreakingResonance.densityTest_eq_indicator
+#print axioms BreakingResonance.densityTest_eq_zero
+#print axioms BreakingResonance.densityTest_memLp
+#print axioms BreakingResonance.reQuadraticCLM
+#print axioms BreakingResonance.reQuadraticCLM_one
+#print axioms BreakingResonance.reQuadraticCLM_mono
+#print axioms BreakingResonance.realTestLp
+#print axioms BreakingResonance.realTestLp_ae
+#print axioms BreakingResonance.lpComposition_re_inner
+#print axioms BreakingResonance.re_inner_realPart
+#print axioms BreakingResonance.lpComposition_inner_abs_le
+#print axioms BreakingResonance.lpComposition_norm_sq
+#print axioms BreakingResonance.levelCross
+#print axioms BreakingResonance.levelCross_integrable
+#print axioms BreakingResonance.levelCross_eq_inner
+#print axioms BreakingResonance.levelNorm_integral
+#print axioms BreakingResonance.levelCross_abs_le
+#print axioms BreakingResonance.cosineOperator
+#print axioms BreakingResonance.summable_cosineOperator_terms
+#print axioms BreakingResonance.levelCross_weighted
+#print axioms BreakingResonance.summable_levelCross_integral_norm
+#print axioms BreakingResonance.integratedCosineForm
+#print axioms BreakingResonance.integratedCosineForm_eq_tsum
+#print axioms BreakingResonance.integratedCosineForm_integrable
+#print axioms BreakingResonance.integratedCosineForm_lower
+#print axioms BreakingResonance.integratedCosineForm_comparison
+
+-- AdjustedComparison
+#print axioms BreakingResonance.rejectedVerletDensity
+#print axioms BreakingResonance.verletRejectionForm
+#print axioms BreakingResonance.verletRejectionForm_nonneg
+#print axioms BreakingResonance.rejectedVerletDensity_integral
+#print axioms BreakingResonance.phaseDensity_position_memLp
+#print axioms BreakingResonance.phaseDensity_position_sq
+#print axioms BreakingResonance.summable_verletRejectionForm
+#print axioms BreakingResonance.randomizedVerletKernel_quadratic_levels
+#print axioms BreakingResonance.randomizedVerletKernel_lower_borel
+#print axioms BreakingResonance.randomizedVerletKernel_comparison_borel
+#print axioms BreakingResonance.verletRejectionForm_congr
+#print axioms BreakingResonance.randomizedVerletKernel_lower_l2
+#print axioms BreakingResonance.randomizedVerletKernel_comparison_l2
+
+-- RoundedFourierLaw
+#print axioms BreakingResonance.roundedDuration_integral_bounded
+#print axioms BreakingResonance.roundedDuration_characteristic_factor
+#print axioms BreakingResonance.bernoulliMultiplier_norm
+#print axioms BreakingResonance.roundedDuration_abs_cosineSeries_high
+#print axioms BreakingResonance.floorDuration_abs_error
+#print axioms BreakingResonance.countLaw_cosineSeries_eq_integral_cos
+#print axioms BreakingResonance.roundedDuration_cosineSeries_error
+
+-- FourierTrig
+#print axioms BreakingResonance.abs_sin_nat_mul_le
+#print axioms BreakingResonance.one_sub_cos_nat_mul_le
+#print axioms BreakingResonance.one_sub_cos_even_mul_le
+#print axioms BreakingResonance.one_sub_cos_le_sq_div_two
+#print axioms BreakingResonance.sq_div_four_le_one_sub_cos
+
+-- DurationNonresonance
+#print axioms BreakingResonance.NonresonantDuration
+#print axioms BreakingResonance.conditionalDurationLaw
+#print axioms BreakingResonance.integrable_duration_cos
+#print axioms BreakingResonance.retainedDuration_ne_zero
+#print axioms BreakingResonance.conditionalDuration_isProbability
+#print axioms BreakingResonance.conditionalDuration_positive_bounded
+#print axioms BreakingResonance.conditionalDuration_one_sub_cos_lower
+#print axioms BreakingResonance.durationCosine_even_harmonic_gap
+#print axioms BreakingResonance.roundedDuration_intermediate_gap
+#print axioms BreakingResonance.roundedDuration_full_low
+
+-- ConditionalFourierLow
+#print axioms BreakingResonance.roundedCount_sq_lower
+#print axioms BreakingResonance.roundedDuration_conditional_low
+
+-- TriangularReferenceLaw
+#print axioms BreakingResonance.triangularDurationLaw
+#print axioms BreakingResonance.triangularDuration_interval
+#print axioms BreakingResonance.triangularDuration_probability
+#print axioms BreakingResonance.triangularDuration_ae
+#print axioms BreakingResonance.triangularCountLaw
+#print axioms BreakingResonance.triangularCount_probability
+#print axioms BreakingResonance.triangularCount_ae_le
+#print axioms BreakingResonance.cosineSeries_gap_upper_of_count_le
+
+-- RoundedFourierBounds
+#print axioms BreakingResonance.evenHarmonic
+#print axioms BreakingResonance.evenHarmonic_even
+#print axioms BreakingResonance.evenHarmonic_le
+#print axioms BreakingResonance.evenHarmonic_pos
+#print axioms BreakingResonance.evenHarmonic_divisor_bounds
+#print axioms BreakingResonance.evenHarmonic_frequency_lower
+#print axioms BreakingResonance.bernoulli_gap_bounds
+#print axioms BreakingResonance.nonresonantDuration_one_sub_cos_lower
+#print axioms BreakingResonance.roundedDuration_conditional_gap
+#print axioms BreakingResonance.roundedDuration_full_gap
+#print axioms BreakingResonance.roundedFourierBounds
+
+-- RoundedCountCells
+#print axioms BreakingResonance.floorDuration_map_apply_singleton
+#print axioms BreakingResonance.floorDuration_map_eq_cell_sum
+#print axioms BreakingResonance.roundedDuration_eq_cell_sum
+#print axioms BreakingResonance.triangularDuration_cellMass
+#print axioms BreakingResonance.triangularCount_eq_endpointLaw
+
+-- FiniteFourierIdentities
+#print axioms BreakingResonance.cellCosine
+#print axioms BreakingResonance.triangularCosineNumerator
+#print axioms BreakingResonance.cellCosine_succ_add
+#print axioms BreakingResonance.triangularCosineNumerator_succ
+#print axioms BreakingResonance.triangularCosineNumerator_second_difference
+#print axioms BreakingResonance.one_sub_cosine_count_second_difference
+#print axioms BreakingResonance.triangularCosineNumerator_identity
+#print axioms BreakingResonance.cellCosine_sine_increment
+#print axioms BreakingResonance.uniformCosine_sum_identity
+
+-- BoundedDurationFourier
+#print axioms BreakingResonance.uniformDurationLaw
+#print axioms BreakingResonance.uniformDuration_probability
+#print axioms BreakingResonance.uniformDuration_ae
+#print axioms BreakingResonance.uniformDuration_cellMass
+#print axioms BreakingResonance.roundedDuration_cosine_cells
+#print axioms BreakingResonance.triangularCount_cosine_numerator
+#print axioms BreakingResonance.uniformCount_cosine_numerator
+#print axioms BreakingResonance.boundedDurationRatio
+#print axioms BreakingResonance.triangularCount_cosine_ratio
+#print axioms BreakingResonance.uniformCount_cosine_ratio
+#print axioms BreakingResonance.uniformDuration_Ico
+#print axioms BreakingResonance.uniformHalfCount_cosine_ratio_even
+#print axioms BreakingResonance.uniformHalfCount_cosine_ratio_odd
+#print axioms BreakingResonance.uniformHalfCount_cosine_ratio
+
+-- BoundedDurationBounds
+#print axioms BreakingResonance.conditionalDuration_eq_of_ae_le
+#print axioms BreakingResonance.cosineSeries_abs_frequency
+#print axioms BreakingResonance.countLaw_cosine_zero
+#print axioms BreakingResonance.roundedDuration_cosine_pi
+#print axioms BreakingResonance.sine_lower_quarter
+#print axioms BreakingResonance.boundedDurationRatio_lower
+#print axioms BreakingResonance.uniformHalfCount_cosine_lower_interior
+#print axioms BreakingResonance.boundedDuration_nonnegative_cosine_and_uniform_comparison
+#print axioms BreakingResonance.triangular_example_fourier
+#print axioms BreakingResonance.uniform_example_fourier
+
+-- ExponentialCountLaw
+#print axioms BreakingResonance.exponentialDuration_Iic
+#print axioms BreakingResonance.exponentialDuration_positive
+#print axioms BreakingResonance.exponentialDuration_interval
+#print axioms BreakingResonance.exponentialDuration_floorMass
+#print axioms BreakingResonance.exponentialDuration_floor_characteristic
+#print axioms BreakingResonance.exponentialDuration_rounded_characteristic
+#print axioms BreakingResonance.exponentialDuration_cosine_formula
+#print axioms BreakingResonance.exponentialDuration_cosine_nonneg
+
+-- ExponentialDurationCutoff
+#print axioms BreakingResonance.exponentialDuration_cutoff_mass
+#print axioms BreakingResonance.exponentialDuration_conditional_cell_mass
+#print axioms BreakingResonance.exponentialDuration_conditional_support
+#print axioms BreakingResonance.exponentialDuration_conditional_probability
+#print axioms BreakingResonance.exponentialDuration_conditional_characteristic
+
+-- ExponentialBernstein
+#print axioms BreakingResonance.exponentialSinePolynomial
+#print axioms BreakingResonance.exponentialReferencePolynomial
+#print axioms BreakingResonance.exponentialComparisonPolynomial
+#print axioms BreakingResonance.exponentialBernsteinCertificate
+#print axioms BreakingResonance.exponentialComparisonPolynomial_identity
+#print axioms BreakingResonance.exponentialComparisonPolynomial_bernstein
+#print axioms BreakingResonance.exponentialComparisonPolynomial_nonneg
+#print axioms BreakingResonance.exponentialReferencePolynomial_comparison
+
+-- ExponentialTrigBounds
+#print axioms BreakingResonance.cosine_le_degree_four
+#print axioms BreakingResonance.sine_le_degree_five
+#print axioms BreakingResonance.cosine_ge_degree_six
+#print axioms BreakingResonance.sine_ge_degree_seven
+#print axioms BreakingResonance.arctan_ge_degree_three
+#print axioms BreakingResonance.exponential_half_ratio_le
+#print axioms BreakingResonance.sine_div_antitone
+
+-- ExponentialFourierComparison
+#print axioms BreakingResonance.boundedDurationRatio_sine_div
+#print axioms BreakingResonance.exponentialCount_gap_lower
+#print axioms BreakingResonance.exponentialSinePolynomial_pos
+#print axioms BreakingResonance.exponentialReferencePolynomial_le_ratio_sq
+#print axioms BreakingResonance.exponentialCount_full_comparison
+
+-- ExponentialTailComparison
+#print axioms BreakingResonance.one_sub_cos_add_le_twice
+#print axioms BreakingResonance.sinc_sq_gap
+#print axioms BreakingResonance.triangularReference_gap_lower
+#print axioms BreakingResonance.exponentialCutoff_shift_comparison
+#print axioms BreakingResonance.exponentialCutoff_numeric
+
+-- ExponentialExample
+#print axioms BreakingResonance.countLaw_shifted_characteristic_re
+#print axioms BreakingResonance.countLaw_shifted_cosine_gap
+#print axioms BreakingResonance.exponentialDuration_conditional_gap
+#print axioms BreakingResonance.exponential_example_fourier
+
+-- MarkovL2
+#print axioms BreakingResonance.markovAction
+#print axioms BreakingResonance.kernel_snd_measurePreserving
+#print axioms BreakingResonance.markovAction_congr
+#print axioms BreakingResonance.markovAction_integrable
+#print axioms BreakingResonance.markovAction_integral_eq
+#print axioms BreakingResonance.markovAction_ae_integrable
+#print axioms BreakingResonance.markovAction_sq_ae_le
+#print axioms BreakingResonance.markovAction_memLp
+#print axioms BreakingResonance.markovAction_integral_sq_le
+#print axioms BreakingResonance.realLp_norm_sq
+#print axioms BreakingResonance.markovL2Linear
+#print axioms BreakingResonance.markovL2Linear_apply_ae
+#print axioms BreakingResonance.markovL2Linear_norm_le
+#print axioms BreakingResonance.markovL2
+#print axioms BreakingResonance.markovL2_apply_ae
+#print axioms BreakingResonance.markovL2_norm_le
+#print axioms BreakingResonance.markovL2_inner_compProd
+#print axioms BreakingResonance.markovL2_inner_quadratic
+#print axioms BreakingResonance.reversible_compProd_map_swap
+#print axioms BreakingResonance.markovL2_symmetric
+#print axioms BreakingResonance.markovDirichlet
+#print axioms BreakingResonance.markovDirichlet_eq_norm_sub
+
+-- SpectralDecay
+#print axioms BreakingResonance.spectralGap_decay
+
+-- LowerSpectralBound
+#print axioms BreakingResonance.roundedVerlet_lower_spectral_of_fourier
+#print axioms BreakingResonance.propositionB
+
+-- BoundedMedian
+#print axioms BreakingResonance.exists_bounded_median
+
+-- Coarea
+#print axioms BreakingResonance.lintegral_crossing_level_sets
+
+-- RestrictedLevelSets
+#print axioms BreakingResonance.RestrictedConductance
+#print axioms BreakingResonance.restrictedConductance_crossing_bound
+
+-- RestrictedPoincareHalf
+#print axioms BreakingResonance.restrictedConductance_half_square
+
+-- RestrictedPoincare
+#print axioms BreakingResonance.restrictedConductance_variance_le
+
+-- ReversibleDensities
+#print axioms BreakingResonance.reversible_bind_withDensity
+#print axioms BreakingResonance.markovAction_integrable_bound
+#print axioms BreakingResonance.markovAction_measurable_bounded
+#print axioms BreakingResonance.reversible_bind_real_density
+#print axioms BreakingResonance.densityIterate
+#print axioms BreakingResonance.densityIterate_bounded
+#print axioms BreakingResonance.reversible_evolve_density
+
+-- BoundedDensityDecay
+#print axioms BreakingResonance.markovDirichlet_congr_ae
+#print axioms BreakingResonance.densityIterate_integral_eq
+#print axioms BreakingResonance.bounded_density_decay
+
+-- DensityTotalVariation
+#print axioms BreakingResonance.withDensity_real_eq_setIntegral
+#print axioms BreakingResonance.totalVariation_triangle
+#print axioms BreakingResonance.totalVariation_le_of_common_submeasure
+#print axioms BreakingResonance.density_totalVariation_le_l1
+#print axioms BreakingResonance.density_totalVariation_le_l2
+
+-- WarmDensityTruncation
+#print axioms BreakingResonance.real_rnDeriv_withDensity
+#print axioms BreakingResonance.warm_density_truncation
+
+-- RestrictedMixing
+#print axioms BreakingResonance.markov_evolve_mono
+#print axioms BreakingResonance.markov_evolve_univ
+#print axioms BreakingResonance.propositionA
+
+-- ConditionalMetropolis
+#print axioms BreakingResonance.conditionalMetropolisDecision
+#print axioms BreakingResonance.conditionalMetropolisDecision_markov
+#print axioms BreakingResonance.conditionalMetropolisKernel
+#print axioms BreakingResonance.conditionalMetropolisKernel_markov
+#print axioms BreakingResonance.conditionalMetropolisKernel_apply
+#print axioms BreakingResonance.conditionalMetropolisKernel_exit_flow
+
+-- EntropyExitGeneral
+#print axioms BreakingResonance.binary_log_lower_general
+#print axioms BreakingResonance.entropy_forces_exit_general
+
+-- GeneralEntropyConductance
+#print axioms BreakingResonance.general_entropy_conductance
+
+-- IndicatorFlow
+#print axioms BreakingResonance.indicator_one_memLp
+#print axioms BreakingResonance.indicator_kernel_flow
+
+-- ConductanceTransfer
+#print axioms BreakingResonance.roundedDurationLaw_mono
+#print axioms BreakingResonance.roundedDurationLaw_smul
+#print axioms BreakingResonance.weighted_roundedConditional_le
+#print axioms BreakingResonance.weighted_mixture_flow_le
+#print axioms BreakingResonance.transfer_restricted_conductance
+
+-- RestrictedRejection
+#print axioms BreakingResonance.rejectedVerletMeasure_eq
+#print axioms BreakingResonance.rejection_on_shell_one
+#print axioms BreakingResonance.rejection_on_shell_mixture
+
+-- ConditionedCentering
+#print axioms BreakingResonance.conditionalMeanVelocity_zero_of_flip_invariant
+#print axioms BreakingResonance.conditionedGibbs_centered
+
+-- ShellAcceptance
+#print axioms BreakingResonance.shell_acceptance
+
+-- RoundedHorizon
+#print axioms BreakingResonance.roundedDuration_ae_horizon
+#print axioms BreakingResonance.conditional_count_horizon
+
+-- ReferenceProposalLaw
+#print axioms BreakingResonance.attachCount
+#print axioms BreakingResonance.measurable_attachCount
+#print axioms BreakingResonance.attachCount_measurePreserving
+#print axioms BreakingResonance.attachCount_condition
+#print axioms BreakingResonance.triangular_attached_proposal
+
+-- ReferenceConductance
+#print axioms BreakingResonance.triangular_reference_conductance
+
+-- RestrictedVerlet
+#print axioms BreakingResonance.propositionC
+
+-- MixingParameters
+#print axioms BreakingResonance.duration_cutoff_tail
+#print axioms BreakingResonance.retained_duration_lower
+#print axioms BreakingResonance.mixing_cutoff_parameters
+#print axioms BreakingResonance.mixing_iteration_threshold
+
+-- StepSizeParameters
+#print axioms BreakingResonance.upperStepConstant
+#print axioms BreakingResonance.threeQuarterPow_sq
+#print axioms BreakingResonance.mixing_step_parameters
+
+-- TargetAssumptions
+#print axioms BreakingResonance.target_hessian_bounds
+#print axioms BreakingResonance.gradient_sub_const_eq
+#print axioms BreakingResonance.shifted_target_hessian_bounds
+#print axioms BreakingResonance.shifted_target_minimum_zero
+#print axioms BreakingResonance.positionGibbs_sub_const
+#print axioms BreakingResonance.roundedVerletKernel_sub_const
+
+-- UpperConstants
+#print axioms BreakingResonance.upperDurationCutoff
+#print axioms BreakingResonance.upperFourierConstant
+#print axioms BreakingResonance.upperSpectralConstant
+#print axioms BreakingResonance.upperHorizonFactor
+#print axioms BreakingResonance.upperC₁
+#print axioms BreakingResonance.upperC₂
+#print axioms BreakingResonance.upperConstants_fourier_pos
+#print axioms BreakingResonance.cutoff_rescaled
+#print axioms BreakingResonance.horizon_rescaled
+#print axioms BreakingResonance.upperConstants_pos
+
+-- UpperAssembly
+#print axioms BreakingResonance.theoremOne_explicit_normalized
+
+-- TheoremOne
+#print axioms BreakingResonance.PaperTalagrand
+#print axioms BreakingResonance.roundedVerletKernel_congr_gradient
+#print axioms BreakingResonance.upperC₂_law_bound
+#print axioms BreakingResonance.theoremOne
+
+-- LowerScalarPotential
+#print axioms BreakingResonance.fastPotential
+#print axioms BreakingResonance.fastGradient
+#print axioms BreakingResonance.fastGradient_eq_max
+#print axioms BreakingResonance.fastGradient_continuous
+#print axioms BreakingResonance.fastPotential_hasDerivAt
+#print axioms BreakingResonance.fastGradient_secant
+#print axioms BreakingResonance.fastGradient_lipschitz
+#print axioms BreakingResonance.fastPotential_strongConvex
+
+-- LowerPositionRecurrence
+#print axioms BreakingResonance.consecutivePositions
+#print axioms BreakingResonance.positionRecurrence
+#print axioms BreakingResonance.harmonicStep
+#print axioms BreakingResonance.curvatureForAngle
+#print axioms BreakingResonance.consecutivePositions_step
+#print axioms BreakingResonance.consecutivePositions_iterate
+#print axioms BreakingResonance.positionRecurrence_fast_theta
+#print axioms BreakingResonance.harmonic_sine_recurrence
+#print axioms BreakingResonance.harmonic_iterate
+
+-- LowerAngles
+#print axioms BreakingResonance.cycleHalfLength
+#print axioms BreakingResonance.fastAnglePos
+#print axioms BreakingResonance.fastAngleNeg
+#print axioms BreakingResonance.cycleHalfLength_bounds
+#print axioms BreakingResonance.fastAngle_bounds
+#print axioms BreakingResonance.fastCurvature_bounds
+
+-- LowerOrbitSigns
+#print axioms BreakingResonance.returnCone
+#print axioms BreakingResonance.sin_ge_sin_of_between
+#print axioms BreakingResonance.iterate_agrees_on_prefix
+#print axioms BreakingResonance.lowerOrbit_signs
+
+-- LowerReturnMatrix
+#print axioms BreakingResonance.harmonicMatrix
+#print axioms BreakingResonance.orbitC
+#print axioms BreakingResonance.orbitVector
+#print axioms BreakingResonance.orbitVector_injective
+#print axioms BreakingResonance.harmonicMatrix_act
+#print axioms BreakingResonance.harmonicMatrix_iterate
+#print axioms BreakingResonance.harmonicMatrix_det
+#print axioms BreakingResonance.harmonicMatrix_decomp
+#print axioms BreakingResonance.orbitC_mul_self
+#print axioms BreakingResonance.harmonicMatrix_pow
+
+-- LowerMatrixBounds
+#print axioms BreakingResonance.matrixTwo_norm
+#print axioms BreakingResonance.cos_half_quotient
+#print axioms BreakingResonance.orbitC_norm
+#print axioms BreakingResonance.orbitC_norm_le
+#print axioms BreakingResonance.orbitC_difference
+
+-- LowerMatrixProduct
+#print axioms BreakingResonance.orbitC_product_norm
+#print axioms BreakingResonance.orbitC_product_norm_le_four
+#print axioms BreakingResonance.one_sub_cos_le_half_square
+
+-- LowerReturnRemainder
+#print axioms BreakingResonance.orbit_return_remainder_of_bounds
+
+-- LowerConeInvariant
+#print axioms BreakingResonance.coneExpansionMatrix
+#print axioms BreakingResonance.orbitPair
+#print axioms BreakingResonance.orbitPair_vector
+#print axioms BreakingResonance.cone_of_boundary_slopes
+#print axioms BreakingResonance.expandedCone_of_small_remainder
+
+-- LowerCycleReturn
+#print axioms BreakingResonance.cycleReturnMatrix
+#print axioms BreakingResonance.cycleExpansionCoefficient
+#print axioms BreakingResonance.cycleReturnMatrix_det
+#print axioms BreakingResonance.cycleReturn_remainder
+
+-- LowerCycleCoefficient
+#print axioms BreakingResonance.cycleExpansionCoefficient_bounds
+#print axioms BreakingResonance.cycleExpansionCoefficient_identity
+#print axioms BreakingResonance.cycleReturn_small_remainder
+
+-- LowerOrbit
+#print axioms BreakingResonance.asymmetricForce
+#print axioms BreakingResonance.cycleLength
+#print axioms BreakingResonance.cycleExpansion
+#print axioms BreakingResonance.cycleExpansion_gt_one
+#print axioms BreakingResonance.cycle_blocks
+#print axioms BreakingResonance.cycle_step
+#print axioms BreakingResonance.expandingVerletOrbit
+
+-- LowerOrbitEnergy
+#print axioms BreakingResonance.orbitQuadratic
+#print axioms BreakingResonance.asymmetricPotential
+#print axioms BreakingResonance.orbitQuadratic_step
+#print axioms BreakingResonance.orbitQuadratic_iterate
+#print axioms BreakingResonance.curvatureForAngle_cos
+#print axioms BreakingResonance.fast_energy_coordinates
+#print axioms BreakingResonance.fast_energy_sandwich
+#print axioms BreakingResonance.orbitQuadratic_cone_lower
+#print axioms BreakingResonance.orbitQuadratic_switch
+
+-- LowerCycleEnergy
+#print axioms BreakingResonance.fastEnergy
+#print axioms BreakingResonance.fastPositionPair
+#print axioms BreakingResonance.fastOrbit
+#print axioms BreakingResonance.fastOrbit_add
+#print axioms BreakingResonance.fastOrbit_pair
+#print axioms BreakingResonance.fastOrbit_energy_during_cycle
+
+-- LowerExpandingSet
+#print axioms BreakingResonance.expandingSeed
+#print axioms BreakingResonance.expandingSet
+#print axioms BreakingResonance.measurableSet_expandingSeed
+#print axioms BreakingResonance.seed_pair_in_cone
+#print axioms BreakingResonance.seed_quadratic_upper
+#print axioms BreakingResonance.expandingSet_energy_upper
+#print axioms BreakingResonance.expandingSet_energy_lower
+
+-- LowerExpandingVolume
+#print axioms BreakingResonance.measurable_asymmetricForce
+#print axioms BreakingResonance.fastOrbit_measurableSet_image
+#print axioms BreakingResonance.measurableSet_expandingSet
+#print axioms BreakingResonance.expandingSeed_volume
+#print axioms BreakingResonance.seed_has_no_second_crossing
+#print axioms BreakingResonance.expandingSet_images_disjoint
+#print axioms BreakingResonance.expandingSet_volume
+
+-- LowerExpandingProbability
+#print axioms BreakingResonance.fastPotential_continuous
+#print axioms BreakingResonance.fastPotential_gibbs_integrable
+#print axioms BreakingResonance.fastPotential_normalizer
+#print axioms BreakingResonance.fastPhase_normalizer_bound
+#print axioms BreakingResonance.expandingSet_gibbs_probability
+
+-- LowerProductDynamics
+#print axioms BreakingResonance.separablePotential
+#print axioms BreakingResonance.separableForce
+#print axioms BreakingResonance.separablePotential_gradient
+#print axioms BreakingResonance.separableForce_lipschitz
+#print axioms BreakingResonance.separablePotential_strongConvex
+#print axioms BreakingResonance.separableEnergy
+#print axioms BreakingResonance.separableVerlet
+#print axioms BreakingResonance.separableTrajectory
+
+-- LowerProductGibbs
+#print axioms BreakingResonance.tilt_map_through_equiv
+#print axioms BreakingResonance.pi_tilted_sum
+#print axioms BreakingResonance.phaseCoordinates
+#print axioms BreakingResonance.phaseCoordinates_apply
+#print axioms BreakingResonance.phaseCoordinates_volume
+#print axioms BreakingResonance.separablePotential_gibbs_integrable
+#print axioms BreakingResonance.separablePhaseGibbs_coordinates
+
+-- LowerConstructedTarget
+#print axioms BreakingResonance.expandingCoordinateCount
+#print axioms BreakingResonance.lowerAuxCurvature
+#print axioms BreakingResonance.lowerCurvatureNeg
+#print axioms BreakingResonance.lowerCurvaturePos
+#print axioms BreakingResonance.lowerPotential
+#print axioms BreakingResonance.lowerForce
+#print axioms BreakingResonance.lowerCoordinate_card
+#print axioms BreakingResonance.lowerCurvature_bounds
+#print axioms BreakingResonance.lowerPotential_gibbs_integrable
+#print axioms BreakingResonance.lowerPotential_conditions
+#print axioms BreakingResonance.lowerPhase_fast_projection
+
+-- LowerProductEnergyTail
+#print axioms BreakingResonance.scalar_phase_exp_moment
+#print axioms BreakingResonance.separable_phase_exp_moment
+
+-- LowerExceptionalEvents
+#print axioms BreakingResonance.lowerEnergyCutoff
+#print axioms BreakingResonance.lowerNoExpander
+#print axioms BreakingResonance.lowerHighEnergy
+#print axioms BreakingResonance.lowerBadPhase
+#print axioms BreakingResonance.lowerPotential_measurable
+#print axioms BreakingResonance.lowerBadPhase_measurable
+#print axioms BreakingResonance.lowerNoExpander_bound
+#print axioms BreakingResonance.lowerHighEnergy_bound
+#print axioms BreakingResonance.lowerBadPhase_bound
+
+-- LowerRejectionCutoff
+#print axioms BreakingResonance.lowerLogCutoff
+#print axioms BreakingResonance.lowerRejectionCount
+#print axioms BreakingResonance.lowerLogCutoff_ge_one
+#print axioms BreakingResonance.lowerLogExpansion_bounds
+#print axioms BreakingResonance.lowerRejectionCount_horizon
+#print axioms BreakingResonance.lowerBadPhase_compl_properties
+#print axioms BreakingResonance.lowerEnergyIncrease
+
+-- LowerAcceptance
+#print axioms BreakingResonance.lowerBadVelocityProbability
+#print axioms BreakingResonance.lowerGoodPositions
+#print axioms BreakingResonance.lowerBadVelocityProbability_measurable
+#print axioms BreakingResonance.lowerGoodPositions_measurable
+#print axioms BreakingResonance.lowerGoodPositions_compl_bound
+#print axioms BreakingResonance.roundedDuration_short_bound
+#print axioms BreakingResonance.lowerAcceptanceBound
+#print axioms BreakingResonance.lowerEstimate_acceptance
+
+-- LowerWarmStart
+#print axioms BreakingResonance.lowerSlowHalfspace
+#print axioms BreakingResonance.lowerSlowHalfspace_measurable
+#print axioms BreakingResonance.scalarQuadratic_halfspace
+#print axioms BreakingResonance.lowerSlowHalfspace_mass
+#print axioms BreakingResonance.lowerWarmStart
+#print axioms BreakingResonance.lowerWarmStart_probability
+#print axioms BreakingResonance.lowerWarmStart_good_mass
+
+-- LowerCostParameters
+#print axioms BreakingResonance.lowerPerturbation
+#print axioms BreakingResonance.lowerLambda
+#print axioms BreakingResonance.lowerCostFirst
+#print axioms BreakingResonance.lowerCostSecond
+#print axioms BreakingResonance.lowerPerturbation_pos
+#print axioms BreakingResonance.lowerLambda_pos
+#print axioms BreakingResonance.lowerExpansion_final
+#print axioms BreakingResonance.lowerLogCutoff_le
+
+-- LowerOptimalCurvature
+#print axioms BreakingResonance.lowerPotential_auxiliary_axis
+#print axioms BreakingResonance.lowerForce_auxiliary_axis
+#print axioms BreakingResonance.lowerForce_zero
+#print axioms BreakingResonance.lowerPotential_zero
+#print axioms BreakingResonance.lowerForce_optimal_lipschitz
+#print axioms BreakingResonance.lowerPotential_optimal_strongConvex
+
+-- TheoremTwo
+#print axioms BreakingResonance.expectedProposalGradients
+#print axioms BreakingResonance.expectedProposalGradients_eq
+#print axioms BreakingResonance.lowerIteration_count
+#print axioms BreakingResonance.theoremTwo
+
+-- IndependentCounts
+#print axioms BreakingResonance.independentCountSum
+
+-- GaussianVerletMode
+#print axioms BreakingResonance.gaussianVerlet_angle
+#print axioms BreakingResonance.gaussianVerlet_position
+
+-- GaussianCrossingAngles
+#print axioms BreakingResonance.crossingAngleWindow
+#print axioms BreakingResonance.crossingAngleWindow_measurable
+#print axioms BreakingResonance.crossingAngleWindow_volume
+#print axioms BreakingResonance.crossingAngle_mem_window
+
+-- GaussianWedge
+#print axioms BreakingResonance.standardNormalPair
+#print axioms BreakingResonance.standardNormalPairDensity
+#print axioms BreakingResonance.standardNormalPair_eq_density
+#print axioms BreakingResonance.gaussianPolarRadial
+#print axioms BreakingResonance.gaussianPolarRadial_measurable
+#print axioms BreakingResonance.gaussianPolar_density
+#print axioms BreakingResonance.gaussianPolar_restrict
+#print axioms BreakingResonance.gaussianPolar_radial_integral
+#print axioms BreakingResonance.gaussianWedge
+#print axioms BreakingResonance.gaussianWedge_measurable
+#print axioms BreakingResonance.gaussianWedge_probability
+
+-- GaussianCrossingMeasure
+#print axioms BreakingResonance.quadratic_positionGaussian
+#print axioms BreakingResonance.gaussianNarrower_le
+#print axioms BreakingResonance.quadratic_phase_scale
+#print axioms BreakingResonance.scalarVerletCrossing
+#print axioms BreakingResonance.scalarVerletCrossing_bound
+
+-- GaussianDiagonalTarget
+#print axioms BreakingResonance.diagonalGaussianCurvature
+#print axioms BreakingResonance.diagonalGaussianPotential
+#print axioms BreakingResonance.diagonalGaussianForce
+#print axioms BreakingResonance.diagonalGaussianPotential_eq
+#print axioms BreakingResonance.diagonalGaussianPotential_integrable
+#print axioms BreakingResonance.diagonalGaussianPotential_measurable
+#print axioms BreakingResonance.diagonalGaussianForce_measurable
+#print axioms BreakingResonance.gaussianSlowHalfspace
+#print axioms BreakingResonance.gaussianSlowHalfspace_measurable
+#print axioms BreakingResonance.gaussianSlowPhase_projection
+#print axioms BreakingResonance.scalarQuadratic_halfspace_neg
+#print axioms BreakingResonance.gaussianSlowHalfspace_mass
+
+-- GaussianKernelCrossing
+#print axioms BreakingResonance.stationaryCrossing
+#print axioms BreakingResonance.verletCrossing_le_proposal
+#print axioms BreakingResonance.gaussianFixedKernel_crossing
+#print axioms BreakingResonance.stationaryCrossing_mixture
+#print axioms BreakingResonance.gaussianMixedKernel_crossing
+
+-- CrossingPathLaw
+#print axioms BreakingResonance.lastPathPosition
+#print axioms BreakingResonance.lastPathPosition_measurable
+#print axioms BreakingResonance.markovPathTransitions
+#print axioms BreakingResonance.markovPathLaw
+#print axioms BreakingResonance.markovPathLaw_zero
+#print axioms BreakingResonance.markovPathLaw_cross_two
+#print axioms BreakingResonance.markovPathLaw_marginal
+#print axioms BreakingResonance.exit_subset_crossings
+#print axioms BreakingResonance.markovPathLaw_exit_le_crossing_sum
+
+-- GaussianLowerBound
+#print axioms BreakingResonance.invariant_domination_iterates
+#print axioms BreakingResonance.invariant_domination_exit
+#print axioms BreakingResonance.gaussianWarmStart
+#print axioms BreakingResonance.gaussianExpectedGradients
+#print axioms BreakingResonance.gaussianExpectedGradients_eq
+#print axioms BreakingResonance.gaussianGradientLowerBound

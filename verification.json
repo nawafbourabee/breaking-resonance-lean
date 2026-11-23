@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-23",
+  "manuscript_sha256": "ae71ca5d490e17a95692fce64e5effa880727a869ee5629423a208159045477a",
+  "main_theorems_verified": true,
+  "lake_build_success": true,
+  "lake_jobs": 9196,
+  "local_import_closure_including_audit": 432,
+  "audited_named_declarations": 797,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "axiom_audit_passed": true,
+  "checked_sources_match_build_snapshot": true,
+  "vendored_source_hashes_match": true,
+  "statement_coverage": "THEOREM_MAP.md",
+  "theorem_one_verified_with_cited_inputs": true,
+  "return_cone_lemma_verified": true,
+  "scalar_expanding_set_lemma_verified": true,
+  "theorem_two_verified": true,
+  "gaussian_lower_bound_verified": true,
+  "explicit_cited_inputs": {
+    "Lemma 6.3": "PaperTalagrand at Theorem 1, TalagrandBound at Proposition 6.8",
+    "Lemma 6.4": "PPInterpolation, Persistence Pays Proposition 3.1 and Corollary 3.5"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "SLT.GaussianLSI.Entropy": {
+    "path": "SLT/GaussianLSI/Entropy.lean",
+    "sha256": "00530d1b319448a5a668439018da08b7bd9b40be518262e108fe4ac9ffcdc6b7"
+  },
+  "SLT.GaussianLSI.SubAddEnt.Decomposition": {
+    "path": "SLT/GaussianLSI/SubAddEnt/Decomposition.lean",
+    "sha256": "e4e6641911c25b40ebd0047f23da951ba87fb2fd92d43740d1ab8318e737d955"
+  },
+  "SLT.GaussianLSI.SubAddEnt.Basic": {
+    "path": "SLT/GaussianLSI/SubAddEnt/Basic.lean",
+    "sha256": "63092f8ea5f2710de41c212853ce002d68e8f62c413146bbf5001d2eb8086650"
+  },
+  "SLT.EfronStein": {
+    "path": "SLT/EfronStein.lean",
+    "sha256": "4b6cc98bf9116571fade2846649f30d12f873790898da289ead521e897152fa5"
+  },
+  "SLT.GaussianLSI.SubAddEnt.Subadditivity": {
+    "path": "SLT/GaussianLSI/SubAddEnt/Subadditivity.lean",
+    "sha256": "2e9b445270abe798d7b455a2b3b364d60ca4316c1d0b4cbc12930cad9877b517"
+  },
+  "SLT.GaussianLSI.DualEntApp": {
+    "path": "SLT/GaussianLSI/DualEntApp.lean",
+    "sha256": "d2854bb651567555867f649d2feff5bfd5533d13def74a58828b6e78a3d233e6"
+  },
+  "SLT.GaussianLSI.DualityEntropy": {
+    "path": "SLT/GaussianLSI/DualityEntropy.lean",
+    "sha256": "4b6759b8b569175d76cf218ee1b6ea51b1ef7b0c62fc763c1d5c6127073ed277"
+  }
+}

@@ -1,0 +1,9 @@
+.lake/
+*.olean
+*.ilean
+*.trace
+__pycache__/
+.DS_Store
+STATEMENT_AUDIT.md
+STATEMENT_AUDIT_20261108.md
+audit_20261108/
